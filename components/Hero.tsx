@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="relative flex flex-col min-h-[100vh]  px-2 items-center w-screen"
+      className="relative flex flex-col md:min-h-[100vh]  px-2 items-center w-screen"
     >
       <div className="relative flex flex-col items-center w-fit mt-[100px] md:mt-[120px]">
         <span className={`text-base sm:text-lg text-gray-400 mb-4`}>jenin.dev</span>

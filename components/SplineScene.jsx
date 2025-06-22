@@ -11,7 +11,7 @@ const SplineComponent = dynamic(() => import("@splinetool/react-spline/next"), {
 
 export default function SplineScene() {
   return (
-    <div className="absolute top-[100vh] -translate-y-[35%] w-full h-[100vh]">
+    <div className="hidden md:block absolute top-[100vh] -translate-y-[35%] w-full h-[100vh]">
       <div
         className={`${sacramento.className} flex gap-4 absolute left-8 md:left-12 lg:left-28 top-8 rotate-6 pointer-events-none`}
       >
