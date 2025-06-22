@@ -3,6 +3,7 @@ import PlaceholderTextAnimation from "./ui/PlaceholderTextAnimation";
 import { contacts } from "@/lib/utils";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
+import { socials } from "@/lib/utils";
 
 function Contact() {
   return (
@@ -13,7 +14,7 @@ function Contact() {
       <span
         className={`${poiret_one.className} mt-[80px] text-2xl text-gray-300`}
       >
-        infinity studios
+        Fun Designs
       </span>
 
       <div className="flex flex-col items-center justify-center gap-12 md:px-20 lg:px-[200px] mt-[30px] md:tracking-wide">
@@ -36,6 +37,33 @@ function Contact() {
           </div>
         </div>
       </div>
+
+      {/* <div className="mt-auto h-[40px] md:h-[60px] w-full mb-8 flex justify-center">
+        {socials.map(({ name, Icon, link }, index) => {
+          return (
+            <Link
+              key={name}
+              href={link}
+              target="_blank"
+              className={`h-[45px] md:h-[60px] aspect-square rounded-xl bg-black border border-white/30 flex items-center justify-center text-4xl cursor-pointer`}
+              style={{
+                "--size": socials.length,
+                "--index": index,
+                transform: `rotate(calc(360 / var(--size) * var(--index) * 1deg))`,
+              }}
+            >
+              <Icon
+                className="text-[24px] sm:text-[32px]"
+                style={{
+                  "--size": socials.length,
+                  "--index": index,
+                  transform: `rotate(calc(360 / var(--size) * var(--index) * -1deg))`,
+                }}
+              />
+            </Link>
+          );
+        })}
+      </div> */}
 
       <div className="w-screen mt-auto flex flex-col items-center justify-around">
         <div className="flex flex-wrap gap-5 md:gap-8 justify-around content-center">
@@ -62,7 +90,7 @@ function Contact() {
       <footer
         className={`${poiret_one.className} mt-auto w-full flex justify-center gap-2 opacity-[70%]`}
       >
-        &copy;<span>infinity studios, 2025</span>
+        &copy;<span>Fun Design Solutions Pvt. Ltd. {new Date().getFullYear()}</span>
       </footer>
     </div>
   );

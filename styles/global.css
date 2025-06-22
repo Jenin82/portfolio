@@ -48,11 +48,3 @@ body {
     z-index: 0;
   }
 }
-
-.details-card:hover {
-  animation: bubbleUp 0.4s ease forwards;
-}
-
-.details-card.return {
-  animation: return 0.4s ease forwards;
-}

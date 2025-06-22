@@ -11,6 +11,10 @@ export const navItems = [
     link: "about",
   },
   {
+    name: "Profile",
+    link: "profile",
+  },
+  {
     name: "Projects",
     link: "projects",
   },
@@ -23,19 +27,19 @@ export const navItems = [
 export const contacts = [
   {
     name: "Mail",
-    link: "mailto:chrysayita@gmail.com",
+    link: "mailto:fundesignindia@gmail.com",
   },
   {
-    name: "Fiverr",
-    link: "https://www.fiverr.com/users/chrysyt",
+    name: "Website",
+    link: "https://fundesign.in/",
   },
   {
-    name: "Instagram",
-    link: "https://instagram.com/_creative_ambition",
+    name: "Contact",
+    link: "https://fundesign.in/lets-talk",
   },
   {
-    name: "Facebook",
-    link: "https://web.facebook.com/share/g/NY81ZaaMtJ6qrrPm/",
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/company/fundesigns",
   },
 ];
 
@@ -67,157 +71,126 @@ export const socials = [
   },
 ];
 
-export const FrontEndSkills = [
+export const Showcase = [
   {
-    name: "React",
-    img: "/assets/StackLogos/react.png",
+    name: "Top 100 Coders",
+    img: "/showcase/top100-group.jpg",
   },
   {
-    name: "Sass",
-    img: "/assets/StackLogos/sass.png",
+    name: "Top Student 2024",
+    img: "/showcase/best-mulearner-2024.jpg",
   },
   {
-    name: "Figma",
-    img: "/assets/StackLogos/figma.png",
+    name: "Github Constellation",
+    img: "/showcase/github-constellation.jpg",
   },
   {
-    name: "Tailwind",
-    img: "/assets/StackLogos/tailwind.png",
+    name: "Transcend 2024",
+    img: "/showcase/transcend-2024.jpg",
   },
   {
-    name: "Solid",
-    img: "/assets/StackLogos/solidjs.png",
+    name: "IEDC Summit 2023",
+    img: "/showcase/iedc-summit-2023.jpg",
   },
   {
-    name: "Astro",
-    img: "/assets/StackLogos/astro.png",
-  },
-];
-export const BackEndSkills = [
-  {
-    name: "Node",
-    img: "/assets/StackLogos/node.png",
-  },
-  {
-    name: "Express",
-    img: "/assets/StackLogos/express.png",
-  },
-  {
-    name: "Next",
-    img: "/assets/StackLogos/next.png",
-  },
-  {
-    name: "Firebase",
-    img: "/assets/StackLogos/firebase.png",
-  },
-  {
-    name: "Strapi",
-    img: "/assets/StackLogos/strapi.png",
+    name: "Amuze 2023",
+    img: "/showcase/amuze-2023.jpg",
   },
 ];
-export const dbSkills = [
+export const Showcase2 = [
   {
-    name: "Postgres",
-    img: "/assets/StackLogos/postgres.png",
+    name: "Permute 2024",
+    img: "/showcase/permute-2024.jpg",
   },
   {
-    name: "MySQL",
-    img: "/assets/StackLogos/mysql.png",
+    name: "Mutate 2023",
+    img: "/showcase/mutate-2023.jpg",
   },
   {
-    name: "Mongo DB",
-    img: "/assets/StackLogos/mongo.png",
+    name: "Top 100 Coders",
+    img: "/showcase/top100-group.jpg",
   },
   {
-    name: "Cloud Firestore",
-    img: "/assets/StackLogos/firestore.png",
+    name: "Top Student 2024",
+    img: "/showcase/best-mulearner-2024.jpg",
   },
   {
-    name: "Supabase",
-    img: "/assets/StackLogos/supabase.png",
-  },
-];
-export const otherSkills = [
-  {
-    name: "Git",
-    img: "/assets/StackLogos/git.png",
-  },
-  {
-    name: "AWS",
-    img: "/assets/StackLogos/aws.png",
-  },
-  {
-    name: "Google Cloud",
-    img: "/assets/StackLogos/gcp.png",
-  },
-  {
-    name: "Spline 3D",
-    img: "/assets/StackLogos/spline.png",
-  },
-  {
-    name: "Photoshop",
-    img: "/assets/StackLogos/photoshop.png",
+    name: "IEDC Summit 2023",
+    img: "/showcase/iedc-summit-2023.jpg",
   },
 ];
 
 export const projects = [
   {
-    title: "La Ultimate Collection",
-    techs: [
-      "/assets/StackLogos/astro.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/next.png",
-      "/assets/StackLogos/supabase.png",
-    ],
-    thumbnail: "/assets/ProjectThumbnails/LUC.png",
-    description: "E-Commerce App",
-  },
-  {
-    title: "Movilla",
+    title: "Urban Trash",
     techs: [
       "/assets/StackLogos/react.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/firebase.png",
-    ],
-    thumbnail: "/assets/ProjectThumbnails/movilla.png",
-    description: "Movie/TV streaming web-app featuring TMDB",
-  },
-  {
-    title: "Revo.Wallet",
-    techs: [
-      "/assets/StackLogos/html.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/js.png",
-    ],
-    thumbnail: "/assets/ProjectThumbnails/revo.png",
-    description: "FinTech SaaS Landing Page",
-  },
-  {
-    title: "Omini",
-    techs: ["/assets/StackLogos/react.png", "/assets/StackLogos/sass.png"],
-    thumbnail: "/assets/ProjectThumbnails/omini.png",
-    description: "GPT-4o LLM - Landing Page",
-  },
-  {
-    title: "Zenchat",
-    techs: [
-      "/assets/StackLogos/next.png",
-      "/assets/StackLogos/react.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/firebase.png",
-    ],
-    thumbnail: "/assets/ProjectThumbnails/z-chat.png",
-    description: "chat app",
-  },
-  {
-    title: "Infinity-Readers Club",
-    techs: [
-      "/assets/StackLogos/solidjs.png",
-      "/assets/StackLogos/sass.png",
+      "/assets/StackLogos/git.png",
+      "/assets/StackLogos/css.png",
       "/assets/StackLogos/supabase.png",
-      "/assets/StackLogos/firebase.png",
     ],
-    thumbnail: "/assets/ProjectThumbnails/e-book.png",
-    description: "E-book web-app",
+    thumbnail: "/assets/ProjectThumbnails/urban-trash.png",
+    description: "Waste Management Solution",
+    link: "https://urbantrash.in",
   },
+  {
+    title: "Open Grad",
+    techs: [
+      "/assets/StackLogos/react.png",
+      "/assets/StackLogos/supabase.png",
+      "/assets/StackLogos/css.png",
+    ],
+    thumbnail: "/assets/ProjectThumbnails/opengrad.png",
+    description: "Web app for learning and enrolling in courses",
+    link: "https://opengrad.in",
+  },
+  {
+    title: "Paint My Wall",
+    techs: [
+      "/assets/StackLogos/kotlin.png",
+      "/assets/StackLogos/firebase.png",
+      "/assets/StackLogos/jetpackcompose.svg",
+    ],
+    thumbnail: "/assets/ProjectThumbnails/paint.png",
+    description: "Android app for changing wall colors",
+    link: "https://play.google.com/store/apps/details?id=com.lascade.wallpaper&pcampaignid=web_share",
+  },
+  {
+    title: "AI Backend",
+    techs: [
+      "/assets/StackLogos/django.png",
+      "/assets/StackLogos/redis.png",
+      "/assets/StackLogos/docker.png",
+      "/assets/StackLogos/postgres.png",
+    ],
+    thumbnail: "/assets/ProjectThumbnails/ai.png",
+    description:
+      "Versatile AI Backend for switchable LLMs (GPT, Gemini, DeepSeek, Suno, Udio, Diffusion)",
+    link: "#",
+  },
+  {
+    title: "Email Automation",
+    techs: [
+      "/assets/StackLogos/django.png",
+      "/assets/StackLogos/redis.png",
+      "/assets/StackLogos/docker.png",
+      "/assets/StackLogos/postgres.png",
+      "/assets/StackLogos/resend.svg",
+    ],
+    thumbnail: "/assets/ProjectThumbnails/email.png",
+    description: "based on user behavior analysis",
+    link: "#",
+  },
+  // {
+  //   title: "Infinity-Readers Club",
+  //   techs: [
+  //     "/assets/StackLogos/solidjs.png",
+  //     "/assets/StackLogos/sass.png",
+  //     "/assets/StackLogos/supabase.png",
+  //     "/assets/StackLogos/firebase.png",
+  //   ],
+  //   thumbnail: "/assets/ProjectThumbnails/e-book.png",
+  //   description: "E-book web-app",
+  //   link: "https://github.com/creativeambition/infinity-readers-club",
+  // },
 ];

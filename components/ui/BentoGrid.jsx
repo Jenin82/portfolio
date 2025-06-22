@@ -3,25 +3,40 @@ import CardCorners from "./CardCorners";
 import { InteractiveGradientBg } from "@/components/ui/InteractiveGradientBg";
 import { FancyButtonAlt } from "./FancyButton";
 import { FaRegCopy } from "react-icons/fa6";
-import { socials } from "@/lib/utils";
 import { PiFilePdfFill } from "react-icons/pi";
-import { RiChatSmile3Line } from "react-icons/ri";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { memo, useMemo } from "react";
 import {
   DynamicGame,
   DynamicInteractiveGradientBg,
 } from "@/lib/dynamic-imports";
+import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 const techStack = {
-  primary: ["Solid", "React", "Next", "Node", "Express", "MongoDB"],
+  primary: [
+    "React",
+    "Next",
+    "Django",
+    "Supabase",
+    "Docker",
+    "Git",
+    "TypeScript",
+    "Python",
+    "Kotlin",
+  ],
   secondary: [
     "Postgres",
-    "MySQL",
+    "DigitalOcean",
     "Firebase",
     "AWS",
-    "Google Cloud",
-    "Blender",
+    "JavaScript",
+    "Tailwind",
+    "Shadcn",
+    "Resend",
+    "Android",
   ],
 };
 
@@ -29,12 +44,12 @@ const BentoGrid = memo(function BentoGrid() {
   const renderTechStack = useMemo(
     () => ({
       primary: techStack.primary.map((item) => (
-        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm">
+        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm mx-1">
           {item}
         </div>
       )),
       secondary: techStack.secondary.map((item) => (
-        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm">
+        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm mx-1">
           {item}
         </div>
       )),
@@ -43,15 +58,19 @@ const BentoGrid = memo(function BentoGrid() {
   );
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-6 md:grid-rows-2 xl:grid-rows-3 w-full flex-1 gap-4">
+    <div className="flex flex-col md:grid md:grid-cols-6 md:grid-rows-1 w-full flex-1 gap-4">
       <div className="relative flex flex-col items-center p-4 min-h-[250px] border border-white/[25%] bg-black/[20%] backdrop-blur-md col-span-2">
         <CardCorners />
         <h1 className={`${montserrat_alternates.className} font-semibold`}>
-          Address
+          About
         </h1>
         <div className="flex flex-col items-center m-auto gap-2">
-          <h1 className="text-2xl font-bold">Ghana ~ Accra</h1>
-          <span className="text-gray-400">Satellite</span>
+          <h1 className="text-2xl font-bold">Full Stack Developer</h1>
+          <span className="text-gray-400">Lascade</span>
+        </div>
+        <div className="flex flex-col items-center m-auto gap-2">
+          <h1 className="text-2xl font-bold">Co-Founder</h1>
+          <span className="text-gray-400">FunDesigns</span>
         </div>
         <div
           className="absolute inset-0 opacity-10"
@@ -73,10 +92,10 @@ const BentoGrid = memo(function BentoGrid() {
         </h1>
         <div className="flex flex-col items-center m-auto gap-2">
           <h1 className={`text-2xl font-bold text-center`}>
-            BSc. Computer Science
+            B.Tech Computer Science
           </h1>
           <span className="text-center text-gray-400">
-            Ghana Communication Technology University
+            APJ Abdul Kalam Technological University
           </span>
           <div
             className="absolute inset-0 opacity-10"
@@ -104,24 +123,23 @@ const BentoGrid = memo(function BentoGrid() {
           self-improvements
         </span>
 
-        <div className="flex flex-col gap-2 mt-auto w-full">
-          <div
-            className="flex justify-between gap-2"
-            style={{
-              maskImage: "radial-gradient(circle, black, transparent)",
-            }}
-          >
-            {renderTechStack.primary}
-          </div>
+        <div
+          className="flex flex-col gap-2 mt-auto w-full overflow-hidden"
+          style={{
+            maskImage: "radial-gradient(circle, black, transparent)",
+          }}
+        >
+          <Marquee>
+            <div className="flex justify-between">
+              {renderTechStack.primary}
+            </div>
+          </Marquee>
 
-          <div
-            className="flex justify-between items-start gap-2 whitespace-nowrap"
-            style={{
-              maskImage: "radial-gradient(circle, black, transparent)",
-            }}
-          >
-            {renderTechStack.secondary}
-          </div>
+          <Marquee speed={60}>
+            <div className="flex justify-between items-start gap-2 whitespace-nowrap">
+              {renderTechStack.secondary}
+            </div>
+          </Marquee>
         </div>
       </div>
 
@@ -129,61 +147,23 @@ const BentoGrid = memo(function BentoGrid() {
         <CardCorners />
         <InteractiveGradientBg />
 
-        <div className="mt-auto h-[40px] md:h-[60px] w-full mb-8 flex justify-center">
-          {socials.map(({ name, Icon, link }, index) => {
-            return (
-              <Link
-                key={name}
-                href={link}
-                target="_blank"
-                className={`h-[45px] md:h-[60px] aspect-square rounded-xl bg-black border border-white/30 flex items-center justify-center text-4xl cursor-pointer`}
-                style={{
-                  "--size": socials.length,
-                  "--index": index,
-                  transform: `rotate(calc(360 / var(--size) * var(--index) * 1deg))`,
-                }}
-              >
-                <Icon
-                  className="text-[24px] sm:text-[32px]"
-                  style={{
-                    "--size": socials.length,
-                    "--index": index,
-                    transform: `rotate(calc(360 / var(--size) * var(--index) * -1deg))`,
-                  }}
-                />
-              </Link>
-            );
-          })}
-        </div>
-
         <h1
           className={`relative ${poppins.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-center`}
         >
-          @Creative Ambition
+          @Spotlight
         </h1>
 
-        <p className="relative max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center mt-4 mb-2">
-          Get in touch via any of the above platforms
+        <Image
+          src="/showcase/top100-prize.jpeg"
+          alt="Spotlight"
+          width={450}
+          height={450}
+          className="object-cover z-30 relative mt-6 rounded-lg"
+        />
+
+        <p className="relative max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center mt-4">
+          Top 100 coders (Fellow)
         </p>
-
-        <div className="relative flex gap-4 mt-8 mb-auto">
-          <Link
-            download={true}
-            target="_blank"
-            href={"/resume.pdf"}
-            className="flex xl:hidden"
-          >
-            <FancyButtonAlt icon={<PiFilePdfFill />} title="Download Resume" />
-          </Link>
-
-          <div className="hidden xl:flex">
-            <FancyButtonAlt icon={<FaRegCopy />} title="Copy Email" />
-          </div>
-        </div>
-
-        <span className="hidden md:flex relative text-sm md:text-base">
-          @infinity Studios
-        </span>
       </div>
 
       <div className="flex flex-col items-center p-4 relative min-h-[250px] border border-white/[25%] xl:row-span-2 col-span-3 xl:col-span-2 bg-black/[20%] backdrop-blur-md">
@@ -191,7 +171,7 @@ const BentoGrid = memo(function BentoGrid() {
 
         <span className="mb-4">
           Let&apos;s play a game of{" "}
-          <b className={`text-[#61cc9c]`}>Classic Chess😎</b>
+          <b className={`text-[#61cc9c]`}>Classic Tic Tac Toe 😎</b>
         </span>
 
         <div className="relative my-auto w-full flex flex-col items-center">
@@ -202,37 +182,35 @@ const BentoGrid = memo(function BentoGrid() {
       <div className="flex justify-center md:hidden p-4 xl:flex flex-col relative min-h-[250px] border border-white/[25%] bg-black/[20%] backdrop-blur-md">
         <CardCorners />
         <span className="text-center mx-auto self-center">
-          Freelance Software Developer{" "}
-          <em className="text-[#61cc9c]">@fiverr</em>
+          Connect with <em className="text-[#61cc9c]">me</em>
         </span>
-        <div
-          className="h-[70px] my-auto"
-          style={{
-            backgroundImage: "url('/assets/contact/fiverr.png')",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <FancyButtonAlt
-          link="https://www.fiverr.com/users/chrysyt"
-          icon={<RiChatSmile3Line />}
-          title="Get in touch"
-        />
+        <div className="flex flex-col gap-3 mt-4">
+          <FancyButtonAlt icon={<FaRegCopy />} title="Copy Email" />
+          <FancyButtonAlt
+            link="https://github.com/Jenin82"
+            icon={<FaGithub />}
+            title="Github"
+          />
+          <FancyButtonAlt
+            link="https://linkedin.com/in/jenin-joseph"
+            icon={<FaLinkedin />}
+            title="Linkedin"
+          />
+        </div>
       </div>
 
-      <div className="hidden justify-center p-4 xl:flex flex-col relative min-h-[250px] border border-white/[25%] bg-black/[20%] backdrop-blur-md">
+      <div className="justify-center p-4 md:flex flex-col col-span-2 lg:col-span-1 relative min-h-[250px] border border-white/[25%] bg-black/[20%] backdrop-blur-md">
         <CardCorners />
         <h1 className="mx-auto">Download Resume</h1>
-        <div
-          className="flex-1 w-[65%] mt-1 mb-0 mx-auto"
-          style={{
-            backgroundImage: "url('/assets/res_illustration.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-          }}
-        ></div>
+        <div className="flex-1 w-[40%] md:w-[50%] lg:w-[73%] mt-1 mb-0 mx-auto">
+          <Image 
+            src="/assets/res_illustration.png"
+            alt="Resume illustration"
+            width={300}
+            height={150}
+            className="mx-auto h-auto max-h-[150px] object-cover object-top"
+          />
+        </div>
 
         <Link
           target="_blank"
@@ -242,6 +220,26 @@ const BentoGrid = memo(function BentoGrid() {
         >
           <FancyButtonAlt icon={<PiFilePdfFill />} title="Download" />
         </Link>
+      </div>
+
+      <div className="hidden lg:hidden justify-center md:flex p-4 flex-col col-span-4 relative min-h-[250px] border border-white/[25%] bg-black/[20%] backdrop-blur-md">
+        <CardCorners />
+        <span className="text-center mx-auto self-center">
+          Connect with <em className="text-[#61cc9c]">me</em>
+        </span>
+        <div className="flex flex-col gap-3 mt-4">
+          <FancyButtonAlt icon={<FaRegCopy />} title="Copy Email" />
+          <FancyButtonAlt
+            link="https://github.com/Jenin82"
+            icon={<FaGithub />}
+            title="Github"
+          />
+          <FancyButtonAlt
+            link="https://linkedin.com/in/jenin-joseph"
+            icon={<FaLinkedin />}
+            title="Linkedin"
+          />
+        </div>
       </div>
     </div>
   );

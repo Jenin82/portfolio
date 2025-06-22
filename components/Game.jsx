@@ -244,7 +244,7 @@ function Board() {
         <div className="mt-auto mb-12 flex flex-col gap-2 items-center">
           <span>
             {gameData.playerName} {"{ "}X{" }"}: {gameData.scores.X}
-            <span className="text-lg mx-4">vs</span> ca.io {"{ "}O{" }"}:{" "}
+            <span className="text-lg mx-4">vs</span> bot {"{ "}O{" }"}:{" "}
             {gameData.scores.O}
           </span>
         </div>

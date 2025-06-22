@@ -1,8 +1,6 @@
 import { montserrat_alternates, sacramento, stretch } from "@/lib/fonts";
 import AboutCard from "@/components/ui/AboutCard";
-import Image from "next/image";
 import StoryAndDetailsCard from "@/components/StoryAndDetailsCard";
-import me from "@/public/assets/me.png";
 import UselessFacts from "@/components/UselessFacts";
 
 function About() {

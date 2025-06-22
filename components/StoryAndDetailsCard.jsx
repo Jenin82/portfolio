@@ -58,50 +58,51 @@ const StoryAndDetailsCard = () => {
 
       {showStory ? (
         <p className="text-md md:text-base tracking-wide">
-          I&apos;ve always been fascinated by technology and software
-          development.{" "}
-          <i className="text-[#61cc9c]">
-            {"{"} technology? yhh!. software dev? not-really. {"}"}
-          </i>{" "}
-          I started my journey as a graphic designer{" "}
-          <i className="text-[#61cc9c]">
-            {"{"} nope. started as a web-designer {"}"}
-          </i>
-          , but I realized that I wanted to be a full-stack developer{" "}
-          <i className="text-[#61cc9c]">
-            {"{"} duh! who doesn&apos;t {"}"}
-          </i>
-          . After obtaining my degree, I decided to pursue this path.{" "}
-          <i className="text-[#61cc9c]">
-            {"{"} yhh no I still have 1 more year to obtain a degree so... {"}"}
-          </i>
+          I started as a curious μLearner at μLearn{" "}
+          <i className="text-[#61cc9c]">{`{ always curious! }`}</i>,<br />
+          Picked up Django, then React{" "} <br />
+          <i className="text-[#61cc9c]">{`{ code, break, repeat }`}</i>,<br />
+          and before I knew it, I was leading frontend{" "}
+          <i className="text-[#61cc9c]">{`{ team captain vibes }`}</i>,<br />
+          then the whole tech team{" "} <br />
+          <i className="text-[#61cc9c]">{`{ boss level unlocked }`}</i>!<br />
+          Eventually, I started my own adventure with FunDesign{" "} <br />
+          <i className="text-[#61cc9c]">{`{ founder feels! }`}</i>.<br />
+          Still learning, still building, always having fun{" "}
+          <span role="img" aria-label="rocket">
+            🚀
+          </span>
         </p>
       ) : (
         <div className="text-md md:text-base flex flex-col gap-2 tracking-wide">
           <h2>
             name ~{" "}
-            <i className="font-medium text-[#61cc9c]">Chrysoprase Ayita</i>
+            <i className="font-medium text-[#61cc9c]">Jenin Joseph</i>
           </h2>
           <h2>
             email ~{" "}
-            <i className="font-medium text-[#61cc9c]">chrysayita@gmail.com</i>
+            <i className="font-medium text-[#61cc9c]">
+              jeninjoseph.official@gmail.com
+            </i>
           </h2>
           <h2>
             address ~{" "}
-            <i className="font-medium text-[#61cc9c]">Accra-Satellite</i>
+            <i className="font-medium text-[#61cc9c]">
+              Ernakulam, Kerala, India
+            </i>
           </h2>
           <h2>
             phone ~{" "}
-            <i className="font-medium text-[#61cc9c]">[+233] 20 425 5719</i>
+            <i className="font-medium text-[#61cc9c]">(+91) 88486 87988</i>
           </h2>
           <hr className="opacity-25" />
           <h2>
-            nationality ~ <i className="font-medium text-[#61cc9c]">Ghanaian</i>
+            nationality ~ <i className="font-medium text-[#61cc9c]">Indian</i>
           </h2>
           <h2>
             age ~{" "}
             <i className="font-medium text-[#61cc9c]">
-              {yearsSince("2002-11-24")}
+              {yearsSince("2000-07-12")}
             </i>
           </h2>
           <h2>

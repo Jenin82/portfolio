@@ -6,7 +6,7 @@ import SplineScene from "@/components/SplineScene";
 import About from "@/components/About";
 import Biography from "@/components/Biography";
 import Projects from "@/components/Projects";
-import TechnicalSkills from "@/components/TechnicalSkills";
+import ShowcaseMarque from "@/components/Showcase";
 import Contact from "@/components/Contact";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
@@ -25,7 +25,7 @@ export default function Home() {
       <SplineScene />
       <About />
       <Biography />
-      <TechnicalSkills />
+      <ShowcaseMarque />
       <Projects />
       <Contact />
     </main>

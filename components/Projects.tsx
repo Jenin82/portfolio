@@ -1,9 +1,69 @@
+"use client";
+
 import { montserrat_alternates, morona } from "@/lib/fonts";
 import { projects } from "@/lib/utils";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { useRef, useState, useEffect } from "react";
 
 function Projects() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToProject = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    
+    const container = scrollContainerRef.current;
+    const projectElement = container.children[index + 1] as HTMLElement; // +1 because of the first empty div
+    
+    if (projectElement) {
+      projectElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  };
+
+  const goToNext = () => {
+    const newIndex = (currentIndex + 1) % projects.length;
+    setCurrentIndex(newIndex);
+    scrollToProject(newIndex);
+  };
+
+  const goToPrev = () => {
+    const newIndex = (currentIndex - 1 + projects.length) % projects.length;
+    setCurrentIndex(newIndex);
+    scrollToProject(newIndex);
+  };
+
+  // Handle scroll events to update current index
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollPosition = container.scrollLeft + container.clientWidth / 2;
+      const projects = Array.from(container.children).slice(1, -1) as HTMLElement[]; // Exclude empty divs
+      
+      for (let i = 0; i < projects.length; i++) {
+        const project = projects[i];
+        const rect = project.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const relativeLeft = rect.left - containerRect.left;
+        
+        if (relativeLeft <= container.clientWidth / 2 && 
+            relativeLeft + rect.width > container.clientWidth / 2) {
+          setCurrentIndex(i);
+          break;
+        }
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div
       id="projects"
@@ -20,9 +80,13 @@ function Projects() {
         <div className="absolute overflow-hidden left-0 w-full h-full before:absolute before:content-[''] before:top-[-1px] before:left-[50%] before:-translate-x-[50%] before:w-[110%] before:h-[30%] before:rounded-[100%] before:translate-y-[-70%] before:bg-[#09130f] before:z-10 after:absolute after:content-[''] after:bottom-[-1px] after:left-[50%] after:-translate-x-[50%] after:w-[110%] after:h-[30%] after:rounded-[100%] after:translate-y-[70%] after:bg-[#09130f] after:z-10"></div>
 
         <div
-          className="relative flex items-center w-full h-full gap-[5%] overflow-x-scroll"
+          ref={scrollContainerRef}
+          className="relative flex items-center w-full h-full gap-[5%] overflow-x-scroll snap-x snap-mandatory"
           style={{
-            scrollSnapType: "x mandatory",
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
           }}
         >
           <div></div>
@@ -32,7 +96,7 @@ function Projects() {
               key={index}
               className="relative min-w-[100%] h-full bg-[#61cc9c] snap-center flex flex-col items-center pt-14 md:pt-[100px] px-2 md:px-4"
             >
-              <Link href="https://github.com/creativeambition" target="_blank">
+              <Link href={project.link} target="_blank">
                 <div
                   className={`group relative flex items-center gap-2 md:gap-4 text-2xl md:text-5xl lg:text-6xl text-black/[80%] font-bold ${montserrat_alternates.className} font-bold`}
                 >
@@ -76,6 +140,23 @@ function Projects() {
 
           <div></div>
         </div>
+      </div>
+
+      <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none z-20">
+        <button 
+          onClick={goToPrev}
+          className="bg-black/30 hover:bg-black/50 text-white p-3 rounded-full pointer-events-auto transition-all duration-300 transform hover:scale-110"
+          aria-label="Previous project"
+        >
+          <FaChevronLeft className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={goToNext}
+          className="bg-black/30 hover:bg-black/50 text-white p-3 rounded-full pointer-events-auto transition-all duration-300 transform hover:scale-110"
+          aria-label="Next project"
+        >
+          <FaChevronRight className="w-5 h-5" />
+        </button>
       </div>
 
       <HScrollIndicator />
